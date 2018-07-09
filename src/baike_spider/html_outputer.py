@@ -29,7 +29,7 @@ class HtmlOutputer():
             fout.write("<tr>")
             fout.write("<td>%s</td>" % data["url"])
             fout.write("<td>%s</td>" % data["title"].encode("utf-8"))
-            try:
+            try:#处理异常
                 fout.write("<td>%s</td>" % data["summary"].encode("utf-8"))
             except:
                 print 'output summary error'

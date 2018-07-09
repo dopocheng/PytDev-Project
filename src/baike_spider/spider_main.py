@@ -25,10 +25,10 @@ class SpiderMain(object):
                 print 'craw %d : %s' % (count, new_url)#打印条目
                 html_cont = self.downloader.download(new_url)
                 new_urls,new_data = self.parser.parse(new_url, html_cont)
-                self.urls.add_new_urls(new_urls)
-                self.outputer.collect_data(new_data)
+                self.urls.add_new_urls(new_urls)#收集新的 url
+                self.outputer.collect_data(new_data)#收集主题 summary
                 
-                if count == 100:
+                if count == 22:
                     break
                 count += 1
         
